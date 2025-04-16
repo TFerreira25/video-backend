@@ -7,6 +7,57 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+---
+
+# 🎥 Videos Backend (Laravel)
+
+Este é um projeto backend construído com **Laravel** que serve como base para um serviço de listagem e visualização de vídeos. Ele consome a API pública do [Pexels](https://www.pexels.com/api) e protege o acesso com autenticação por token.
+
+---
+
+## 🚀 Instalação
+
+```bash
+git clone https://github.com/seu-usuario/videos-backend.git
+cd videos-backend
+composer install
+cp .env.example .env
+php artisan key:generate
+```
+
+Configura a base de dados no `.env`, depois:
+
+```bash
+php artisan migrate
+```
+
+---
+
+## ⚙️ Variáveis de Ambiente
+
+Antes de executar o projeto, garante que o ficheiro `.env` contém:
+
+```env
+PEXELS_API_KEY=           # A tua chave da API do Pexels. Usada para buscar vídeos e respetivos metadados.
+API_ACCESS_TOKEN=         # Hash usada para autenticação nas rotas da API.
+```
+
+Podes obter a chave da API do Pexels em [pexels.com/api](https://www.pexels.com/api).
+
+---
+
+## ▶️ Uso
+
+Para iniciares o servidor de desenvolvimento:
+
+```bash
+php artisan serve
+```
+
+As rotas protegidas exigem o `API_ACCESS_TOKEN` no header `Authorization` como `Bearer token`.
+
+---
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
